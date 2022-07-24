@@ -33,10 +33,17 @@ export const PlantStats: React.FC = () => {
     axios.post(`/water/${id}`, { on: water });
   }, [water, id]);
 
-  let hours, apm;
+  let hours, apm, minutes;
   if(data.lastWatered) {
     hours = new Date(data.lastWatered).getHours();
-    apm = hours >= 12 ? 'pm' : 'am';
+    minutes = new Date(data.lastWatered).getMinutes();
+    minutes = minutes.toString().padStart(2,'0');
+    if(hours >= 12) {
+      hours -= 12;
+      apm = 'pm';
+    } else {
+      apm = 'am';
+    }
   }
 
   return (
@@ -57,7 +64,7 @@ export const PlantStats: React.FC = () => {
           </div>
           <div>
             <div>Last Watered</div>
-            <div className="value">{hours}{apm}</div>
+            <div className="value">{hours}:{minutes}{apm}</div>
           </div>
         </div>
       </div>
