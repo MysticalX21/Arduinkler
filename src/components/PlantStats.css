@@ -36,7 +36,7 @@
     font-size: 48px;
 }
 
-.plant-stats img {
-    width: 50%;
-    min-width: 300px;
+.water-button input {
+    cursor: pointer;
+    outline: 0;
 }

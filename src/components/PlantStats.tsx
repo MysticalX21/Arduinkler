@@ -10,6 +10,10 @@ export const PlantStats: React.FC = () => {
   const [ data, setData ] : [data: any, setData: any] = useState({});
   const [ water, setWater ] = useState(false);
 
+  const mousedown = () => {
+    setWater(true);
+  };
+
   useEffect(() => {
     axios.get(`/plant/${id}`).then(response => {
       setData(response.data);
@@ -24,6 +28,10 @@ export const PlantStats: React.FC = () => {
       document.removeEventListener('mouseup', mouseup);
     }
   }, [id]);
+
+  useEffect(() => {
+    axios.post(`/water/${id}`, { on: water });
+  }, [water, id]);
 
   let hours, apm;
   if(data.lastWatered) {
@@ -55,7 +63,7 @@ export const PlantStats: React.FC = () => {
       </div>
       <div className="water-button">
         <h1>Hold down to water</h1>
-        <input type="image" src={water ? liquidActive : liquid} alt="Hold down to water" draggable={false} onMouseDown={() => setWater(true)} />
+        <input type="image" src={water ? liquidActive : liquid} alt="Hold down to water" draggable={false} onMouseDown={mousedown} />
       </div>
     </div>
   );
