@@ -1,0 +1,19 @@
+.plant {
+    margin: 25px;
+    text-decoration: none;
+}
+
+.plant figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+}
+
+.plant figcaption {
+    background-color: #222;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 20px;
+}

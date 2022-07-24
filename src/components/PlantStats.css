@@ -1,0 +1,42 @@
+.plant-stats {
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plant-stats > div {
+    margin-bottom: 60px;
+    flex: 50%;
+    text-align: center;
+}
+
+.stats {
+    font-size: 28px;
+}
+
+.stats > div {
+    margin-bottom: 20px;
+}
+
+.value {
+    font-weight: bold;
+    color: #3bbbf7;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.water-button {
+    text-align: center;
+}
+
+.water-button h1 {
+    font-size: 48px;
+}
+
+.plant-stats img {
+    width: 50%;
+    min-width: 300px;
+}
